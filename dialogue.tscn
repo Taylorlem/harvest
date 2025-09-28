@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3d0u3wb50fk"]
+
+[ext_resource type="Script" uid="uid://dqtnvwdjuxcyn" path="res://dialogue.gd" id="1_oi3j2"]
+[ext_resource type="PackedScene" uid="uid://dntbavko7m8eo" path="res://interactable.tscn" id="2_758ep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoxo3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3j2"]
+
+[node name="Dialogue" type="Area2D"]
+script = ExtResource("1_oi3j2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hoxo3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Interactable" parent="." instance=ExtResource("2_758ep")]
+interact_name = "Read"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_oi3j2")
+
+[node name="Label" type="Label" parent="Interactable"]
+offset_left = -192.0
+offset_top = -32.0
+offset_right = 200.0
+offset_bottom = -9.0
+text = "Its nearly time... they don't see the signs... but I do."

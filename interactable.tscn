@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dntbavko7m8eo"]
+
+[ext_resource type="Script" uid="uid://cppeedws66plq" path="res://interactable.gd" id="1_wh154"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh154"]
+size = Vector2(98, 170)
+
+[node name="Door" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_wh154")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(39, 75)
+shape = SubResource("RectangleShape2D_wh154")

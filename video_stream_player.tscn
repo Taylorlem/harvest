@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bct0xfcv6y62a"]
+
+[ext_resource type="VideoStream" uid="uid://ccgqo7yk2nhol" path="res://assets/copy_CA1DF40A-137B-4039-9B1F-FF83858E17CB.ogv" id="1_8ndh1"]
+[ext_resource type="Script" uid="uid://np0n7pghgddm" path="res://video_stream_player.gd" id="2_y42jt"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer"]
+offset_right = 1080.0
+offset_bottom = 696.0
+stream = ExtResource("1_8ndh1")
+autoplay = true
+expand = true
+script = ExtResource("2_y42jt")

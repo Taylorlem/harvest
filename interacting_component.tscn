@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvulhcn1qwiri"]
+
+[ext_resource type="Script" uid="uid://co7uxbu1r70xx" path="res://interacting_component.gd" id="1_0w7yd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rmx8"]
+size = Vector2(120, 56)
+
+[node name="InteractingComponent" type="Node2D"]
+script = ExtResource("1_0w7yd")
+
+[node name="InteractRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_3rmx8")
+
+[node name="InteractLabel" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -24.0
+offset_right = 64.0
+offset_bottom = 51.0
+text = "can you see me
+
+"
+horizontal_alignment = 1
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]
